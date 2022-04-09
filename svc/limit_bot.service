@@ -1,0 +1,31 @@
+# Limit Order (Brute) Bot service, restarts every 4 hours
+# uses NVM to manage node.js versions
+# based on ubuntu 18.04 systemctl
+#
+# put it here: /etc/systemd/system/limit_bot.service 
+#
+# To Run & Enable
+# sudo systemctl start limit_bot.service 
+# sudo systemctl enable limit_bot.service
+# 
+# Watch console.log 
+# journalctl --unit="limit_bot.service" --follow
+#
+# Check for fatal errors
+# journalctl -xe
+
+[Unit]
+Description     = Limit Bot
+Wants           = network-online.target
+After           = network-online.target 
+
+[Service]
+User = [your user]
+WorkingDirectory= /home/[your user]/bots/limit_bot
+ExecStart		= /home/[your user]/.nvm/versions/node/v16.0.0/bin/node index.js
+Restart         = always
+RestartSec      = 60
+RuntimeMaxSec   = 14400
+
+[Install]
+WantedBy	= multi-user.target

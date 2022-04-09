@@ -1,0 +1,20 @@
+{
+  "name": "house_bot",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@taquito/remote-signer": "10.0.0",
+    "@taquito/taquito": "10.0.0",
+    "js-sha256": "^0.9.0",
+    "ora": "^5.4.0",
+    "slimbot": "^5.1.0"
+
+  }
+}
